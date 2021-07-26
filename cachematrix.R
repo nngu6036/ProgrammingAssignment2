@@ -19,7 +19,6 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## The function resolve the cached inverse of the custom matrix object
-## Requirement: install matlib packages
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
@@ -27,9 +26,9 @@ cacheSolve <- function(x, ...) {
   if(!is.null(m)) {
     message("getting cached data")
     return(m)
-  }
+  }?
   data <- x$get()
-  m <- inv(data, ...)
+  m <- solve(data, ...)
   x$setinverse(m)
   m
 }
